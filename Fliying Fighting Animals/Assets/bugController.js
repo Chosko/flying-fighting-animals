@@ -15,5 +15,5 @@ function Start () {
 }
 
 function Update () {
-
+	// TO DO:  NavMesh.SetDestination(target.position)
 }

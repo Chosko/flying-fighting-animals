@@ -1,8 +1,8 @@
 ﻿#pragma strict
 
-var bugNumber		: int			= 0;
-var bugStartPos		: GameObject[];
-var bug1Prefab		: GameObject;
+var bugNumber		: int			= 0;				// Number, in order, of bugs selected (0-4)
+var bugStartPos		: GameObject[];						// Array containing the start positions
+var bug1Prefab		: GameObject;						// Bug Prefab...
 var bug2Prefab		: GameObject;
 var bug3Prefab		: GameObject;
 
@@ -15,28 +15,29 @@ function Start () {
 }
 
 function ChooseBug(bugType : int){
-	print ("Choose Bug ID " + bugNumber + " is " + bugType);
-	var bugToUse	: GameObject;
+	var bugToUse	: GameObject;							// Set the variable to a single one we can use
 	if (bugType == 1)
 		bugToUse = bug1Prefab;
 	if (bugType == 2)
 		bugToUse = bug2Prefab;
 	if (bugType == 3)
 		bugToUse = bug3Prefab;
-	print ("bugToUse Name: " + bugToUse.name);
+
+	// Instantiate the actual bug and assign it to the Game Control array
+	// Assign the bugID to the bug object
+	// Increase bugNumber by 1
 	gameControl.GetComponent(gameController).playerBug[bugNumber] = Instantiate(bugToUse, bugStartPos[bugNumber].transform.position, Quaternion.identity);
-	print ("spacer");
 	var tempBugObj	= gameControl.GetComponent(gameController).playerBug[bugNumber];
 	tempBugObj.GetComponent(bugController).bugID = bugNumber;
 	bugNumber 	+= 1;
-	print ("new But Number: " + bugNumber);
 	
+	// If all 5 have been chosen....
 	if (bugNumber == 5)
 		EndBugChoosing();
 }
 
-function EndBugChoosing(){
-	choosingPanel.SetActive(false);
-	planText.SetActive(true);
-	gameControl.GetComponent(gameController).gamePhase = 2;
+function EndBugChoosing(){				// ends this phase
+	choosingPanel.SetActive(false);								// Hide the choosing UI panel
+	planText.SetActive(true);									// Activate the planning title text
+	gameControl.GetComponent(gameController).gamePhase = 2;		// Set phase to 2
 }
