@@ -5,6 +5,7 @@ var gameTimeLimit	: float			= 15.0;			// Time limit per game round
 var playerBug		: GameObject[];					// Array holding the actual game objects for player bugs
 var enemyBug		: GameObject[];					// Array holding the actual game objects for enemy bugs
 var planningControl	: GameObject;
+var choosingControl	: GameObject;
 
 var startButton		: GameObject;
 var planningTitle	: GameObject;
@@ -12,6 +13,7 @@ var timerObject		: GameObject;
 
 function Start () {
 	planningControl = GameObject.Find("Planning Control");
+	choosingControl	= GameObject.Find("Choosing Control");
 }
 
 function Update () {
@@ -39,6 +41,7 @@ function EndGamePhase(delay : float){
 	gamePhase		= 2;
 	startButton.SetActive(true);
     planningTitle.SetActive(true);
+    choosingControl.GetComponent(choosingController).ChooseEnemyActions();
 }
 
 // This function can be called when any enemy or flag is defeated.
