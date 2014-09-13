@@ -1,5 +1,6 @@
 ﻿#pragma strict
 
+var bugID					: int;
 var targetObject			: GameObject;			// Target Object -- Enemy for Attack, Player for Defend
 var targetSpot				: Vector3;				// If !targetObject, use targetSpot (map spot) for SetDestination
 var shootRadius				: float;				// Distance to target that shoot is possible

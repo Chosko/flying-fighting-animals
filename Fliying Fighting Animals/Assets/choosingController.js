@@ -15,6 +15,7 @@ function Start () {
 }
 
 function ChooseBug(bugType : int){
+	print ("Choose Bug ID " + bugNumber + " is " + bugType);
 	var bugToUse	: GameObject;
 	if (bugType == 1)
 		bugToUse = bug1Prefab;
@@ -22,8 +23,13 @@ function ChooseBug(bugType : int){
 		bugToUse = bug2Prefab;
 	if (bugType == 3)
 		bugToUse = bug3Prefab;
+	print ("bugToUse Name: " + bugToUse.name);
 	gameControl.GetComponent(gameController).playerBug[bugNumber] = Instantiate(bugToUse, bugStartPos[bugNumber].transform.position, Quaternion.identity);
+	print ("spacer");
+	var tempBugObj	= gameControl.GetComponent(gameController).playerBug[bugNumber];
+	tempBugObj.GetComponent(bugController).bugID = bugNumber;
 	bugNumber 	+= 1;
+	print ("new But Number: " + bugNumber);
 	
 	if (bugNumber == 5)
 		EndBugChoosing();
@@ -32,4 +38,5 @@ function ChooseBug(bugType : int){
 function EndBugChoosing(){
 	choosingPanel.SetActive(false);
 	planningControl.SetActive(true);
+	gameControl.GetComponent(gameController).gamePhase = 2;
 }
