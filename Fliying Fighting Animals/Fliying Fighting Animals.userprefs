@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/bugPlanner.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\choosingController.js">
     <Files>
-      <File FileName="Assets/planningController.js" Line="3" Column="1" />
-      <File FileName="Assets/bugPlanner.js" Line="1" Column="1" />
+      <File FileName="Assets\planningController.js" Line="1" Column="1" />
+      <File FileName="Assets\bugPlanner.js" Line="1" Column="1" />
+      <File FileName="Assets\choosingController.js" Line="29" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
