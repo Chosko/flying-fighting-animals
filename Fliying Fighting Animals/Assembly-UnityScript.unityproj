@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\bugController.js" />
+     <Compile Include="Assets\bugPlanner.js" />
      <Compile Include="Assets\choosingController.js" />
      <Compile Include="Assets\follow.js" />
      <Compile Include="Assets\gameController.js" />
