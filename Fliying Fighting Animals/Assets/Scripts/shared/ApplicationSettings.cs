@@ -78,7 +78,7 @@ namespace Settings
     /// <seealso>
     /// MainMenuGui.OnServerInitialized
     /// </seealso>
-    public const string GAME_SCENE = "GameScene";
+    public const string GAME_SCENE = "Game Scene";
 
     /// <summary>
     /// The Main Menu Scene name. Loaded on Logout.
