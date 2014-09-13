@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 var gamePhase		: int			= 1;			// 1 = Choose Bug, 2 = Choose Attacks, 3 = Actual gameplay, 4 = Game Over
-var gameTimeLimit	: float			= 15.0;			// Time limit per game round
+var gameTimeLimit	: float			= 5.0;			// Time limit per game round
 var playerBug		: GameObject[];					// Array holding the actual game objects for player bugs
 var enemyBug		: GameObject[];					// Array holding the actual game objects for enemy bugs
 var planningControl	: GameObject;

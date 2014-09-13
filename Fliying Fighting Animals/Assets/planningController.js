@@ -35,6 +35,7 @@ function DefendBugChosen(bugID : int){
 function PatrolPosChosen(mapPos : Vector3){
 	planText.GetComponent(UI.Text).text = "Click A Bug";							// Change the text to tell the player what to do
 	mapPos.y = currentBug.transform.position.y;
+	currentBug.GetComponent(bugController).targetObject = null; 					// Remove the targetObject so when first choice was object then swiched to spot, then spot won't be overwritten by object cmd
 	currentBug.GetComponent(bugController).targetSpot = mapPos;						// Set the targetSpot for selected bug to the chosen map Vector3 (Position)
 	planPhase		= 0;			// Reset planPhase
 }
@@ -64,6 +65,7 @@ function EnemyChooseAttack(enemyID : int, playerID : int){
 
 function EnemyChoosePatrol(enemyID : int, posObj : GameObject){
 	tempEnemyObj = gameControl.GetComponent(gameController).enemyBug[enemyID];
+	tempEnemyObj.GetComponent(bugController).targetObject = null;
 	tempEnemyObj.GetComponent(bugController).targetSpot	= posObj.transform.position;
 	tempEnemyObj.GetComponent(bugController).targetSpot.y = gameControl.GetComponent(gameController).enemyBug[enemyID].transform.position.y;
 }

@@ -64,12 +64,15 @@ function ChooseEnemyActions(){
     	if (randomActionNumber == 1)					// Enemy will attack
     		planningControl.GetComponent(planningController).EnemyChooseAttack(i, Random.Range(0,5));			// Pass enemy ID & random player ID
     	if (randomActionNumber == 2)
-    		planningControl.GetComponent(planningController).EnemyChoosePatrol(i, enemyPatrolPos[Random.Range(0,enemyPatrolPos.Length)]);  // Pass enemy ID & Random Patrol Posiion (game object)
+    		planningControl.GetComponent(planningController).EnemyChoosePatrol(i, enemyPatrolPos[Random.Range(0,enemyPatrolPos.Length)]);  // Pass enemy ID & Random Patrol Position (game object)
     	if (randomActionNumber == 3)
     	{
     		var defendID = i;
+    		//||(selectedBug.GetComponent(bugController).targetObject == GameObject.)
     		while (defendID == i)
     			defendID = Random.Range(0,5);		// Choose a new ID #.  If it's still the same as i, will repeat.
+    			//selectedBug = gameControl.GetComponent(gameController).enemyBug[defendID];
+    			
     		planningControl.GetComponent(planningController).EnemyChooseDefend(i, defendID); // Pass enemy ID & random enemy ID
     	}
     	if (randomActionNumber >= 4)

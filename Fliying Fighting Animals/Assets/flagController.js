@@ -3,6 +3,7 @@
 var isEnemy			: boolean		= false;
 var gameControl		: GameObject;
 var planningControl	: GameObject;
+var health			: float			= 400;	// Hit Points
 
 function Start () {
 	gameControl		= GameObject.Find("Game Control");
