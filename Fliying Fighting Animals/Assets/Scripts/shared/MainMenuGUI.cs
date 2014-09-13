@@ -152,17 +152,24 @@ public class MainMenuGUI : MonoBehaviour
     /// </summary>
     private void displayMainPanel()
     {
-        if (GUI.Button(new Rect(210, 10, 100, 25), "Start a Server"))
+        if (GUI.Button(new Rect(210, 10, 150, 25), "Single Player"))
+        {
+            Debug.Log ("Starting single player match - loading " + ApplicationSettings.GAME_SCENE);
+            Application.LoadLevel (ApplicationSettings.GAME_SCENE);
+            Debug.Log ("Scene loaded");
+        }
+
+        if (GUI.Button(new Rect(210, 50, 150, 25), "Start a Server"))
         {
             currentGUIState = GUIState.SERVER_PANEL;
         }
 
-        if (GUI.Button(new Rect(210, 50, 150, 25), "Connect to a Server ..."))
+        if (GUI.Button(new Rect(210, 90, 150, 25), "Connect to a Server ..."))
         {
             currentGUIState = GUIState.CLIENT_PANEL;
         }
 
-        if (GUI.Button(new Rect(210, 90, 100, 25), "Exit"))
+        if (GUI.Button(new Rect(210, 130, 150, 25), "Exit"))
         {
             Application.Quit();
         }
