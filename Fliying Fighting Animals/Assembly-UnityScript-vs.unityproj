@@ -49,8 +49,11 @@
      <Compile Include="Assets\bugController.js" />
      <Compile Include="Assets\bugPlanner.js" />
      <Compile Include="Assets\choosingController.js" />
+     <Compile Include="Assets\countdownTimer.js" />
+     <Compile Include="Assets\flagController.js" />
      <Compile Include="Assets\follow.js" />
      <Compile Include="Assets\gameController.js" />
+     <Compile Include="Assets\patrolChooser.js" />
      <Compile Include="Assets\planningController.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
