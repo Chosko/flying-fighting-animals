@@ -8,7 +8,7 @@ var bug3Prefab		: GameObject;
 
 var gameControl		: GameObject;
 var choosingPanel	: GameObject;
-var planningControl	: GameObject;
+var planText		: GameObject;
 
 function Start () {
 	gameControl = GameObject.Find("Game Control");
@@ -37,6 +37,6 @@ function ChooseBug(bugType : int){
 
 function EndBugChoosing(){
 	choosingPanel.SetActive(false);
-	planningControl.SetActive(true);
+	planText.SetActive(true);
 	gameControl.GetComponent(gameController).gamePhase = 2;
 }
