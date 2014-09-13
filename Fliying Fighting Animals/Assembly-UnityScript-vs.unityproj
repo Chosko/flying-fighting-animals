@@ -51,6 +51,7 @@
      <Compile Include="Assets\choosingController.js" />
      <Compile Include="Assets\follow.js" />
      <Compile Include="Assets\gameController.js" />
+     <Compile Include="Assets\patrolChooser.js" />
      <Compile Include="Assets\planningController.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity 4.6/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

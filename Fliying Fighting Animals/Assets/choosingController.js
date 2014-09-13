@@ -29,6 +29,7 @@ function ChooseBug(bugType : int){
 	gameControl.GetComponent(gameController).playerBug[bugNumber] = Instantiate(bugToUse, bugStartPos[bugNumber].transform.position, Quaternion.identity);
 	var tempBugObj	= gameControl.GetComponent(gameController).playerBug[bugNumber];
 	tempBugObj.GetComponent(bugController).bugID = bugNumber;
+	tempBugObj.tag = "playerBug";			// set the tag on this object to "Player Bug"
 	bugNumber 	+= 1;
 	
 	// If all 5 have been chosen....

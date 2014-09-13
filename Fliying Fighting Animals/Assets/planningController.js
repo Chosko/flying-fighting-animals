@@ -2,7 +2,6 @@
 
 var planText		: GameObject;							// Title text for this phase
 var planPhase		: int				= 0;				// 0 = choosing bug, 1 = choosing target
-var choosingTarget	: boolean			= false;			// Are we choosing a target?
 var currentBug		: GameObject;							// Current bug setting it's target
 var gameControl		: GameObject;							
 var clickLayerMask	: LayerMask;							// Set to only "Primitives" layer
@@ -12,24 +11,34 @@ function Start () {
 }
 
 function Update () {
-	if (choosingTarget)
-	{
-		// Wait for input from player click
-		if (Input.GetMouseButtonDown)					// If there's a button down (will work for one finger in touch)
-		{
-			// Send a ray to the point where the player clicked, looking for a primitive in that spot.
-			// If the primitive is not the currently selected but, do the logic for target selection.
-		}
-	}
+
 }
 
 function BugSelected(bugID : int){
 	planText.GetComponent(UI.Text).text = "Choose a Target";						// Change the text to tell player what to do
 	currentBug		= gameControl.GetComponent(gameController).playerBug[bugID];	// Set the current bug being selected for
-	choosingTarget	= true;															// Tell this script to look for input
+	planPhase		= 1;			// Move planPhase Forward
 }
 
 function DefendBugChosen(bugID : int){
-	print ("Bug #" + bugID + " was chosen as a target for bug " + currentBug.name + " to target");
-	
+	if (gameControl.GetComponent(gameController).playerBug[bugID] != currentBug)	// Don't let player defend itself
+	{
+		planText.GetComponent(UI.Text).text = "Click A Bug";							// Change the text to tell the player what to do
+		currentBug.GetComponent(bugController).targetObject = gameControl.GetComponent(gameController).playerBug[bugID]; // Set the targetObject for selected bug to the chosen bug object
+		planPhase		= 0;			// Reset planPhase
+	}
+}
+
+function PatrolPosChosen(mapPos : Vector3){
+	planText.GetComponent(UI.Text).text = "Click A Bug";							// Change the text to tell the player what to do
+	mapPos.y = currentBug.transform.position.y;
+	print ("mapPos: " + mapPos);
+	currentBug.GetComponent(bugController).targetSpot = mapPos;						// Set the targetSpot for selected bug to the chosen map Vector3 (Position)
+	planPhase		= 0;			// Reset planPhase
+}
+
+function AttackBugChosen(bugID : int){				// Pass along the ENEMY Bug ID
+	planText.GetComponent(UI.Text).text = "Click A Bug";							// Change the text to tell the player what to do
+	currentBug.GetComponent(bugController).targetObject = gameControl.GetComponent(gameController).enemyBug[bugID]; // Set the targetObject for selected bug to the chosen bug object
+	planPhase		= 0;			// Reset planPhase
 }
