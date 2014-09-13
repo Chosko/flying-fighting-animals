@@ -49,6 +49,8 @@
      <Compile Include="Assets\bugController.js" />
      <Compile Include="Assets\bugPlanner.js" />
      <Compile Include="Assets\choosingController.js" />
+     <Compile Include="Assets\countdownTimer.js" />
+     <Compile Include="Assets\flagController.js" />
      <Compile Include="Assets\follow.js" />
      <Compile Include="Assets\gameController.js" />
      <Compile Include="Assets\patrolChooser.js" />
